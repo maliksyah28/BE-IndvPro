@@ -14,7 +14,7 @@ const carrier = nodemailer.createTransport({
     user: "enigme.k2@gmail.com",
     clientId: "502497843315-504f8o7hhttmf7tdbd5me03t0dt94uum.apps.googleusercontent.com",
     clientSecret: "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",
-    refreshToken: "1//042qqDSEF78v9CgYIARAAGAQSNwF-L9IrlEbZbLs5ihhZmaXnrf0zvFa-5jgC904iUuiBIChPif0XCMOMdzjnqgnzfPSfd1p6vok",
+    refreshToken: "1//04fezZlSOoVX5CgYIARAAGAQSNwF-L9IrF6h1smq8iMlY6EMKidnMsTHKEOmO-crzcHzlgO2gNWv6bayogknn5OuWfPNWK0r-rkM",
   },
 });
 

@@ -16,7 +16,7 @@ const GetCommentContent = async (req, res, next) => {
 
     const connect = project.promise();
 
-    const sqlGetComment = `select user_Id, username, comment, comment.createdAt from comment left join user using(user_Id) where idpost = ? LIMIT ? OFFSET ?`;
+    const sqlGetComment = `select user_Id, profilepicture, username, comment, comment.createdAt from comment left join user using(user_Id) where idpost = ? LIMIT ? OFFSET ?`;
     const dataDBComment = [idpost, limit, offset];
     const [responsComment] = await connect.query(sqlGetComment, dataDBComment);
 

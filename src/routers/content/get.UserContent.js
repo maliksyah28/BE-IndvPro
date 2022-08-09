@@ -56,11 +56,16 @@ const getDetailPost = async (req, res, next) => {
       sqlGetDetailPost,
       dataBaseDetailPost
     );
+    const getLike = `select p.idpost, username, count(l.user_Id) as total_likes from post p left join user u using(user_Id) left join likes l using(idpost) group by idpost = ? `;
+    const dbGetLike = [idpost];
+    const [resGetLike] = await connect.query(getLike, dbGetLike);
+
+    // console.log({ hmm: responsGetDetailpost[0] });
     if (!responsGetDetailpost.length) throw { message: "Content Not Found" };
     res.send({
       status: "succses",
       message: "content post",
-      data: { result: responsGetDetailpost },
+      data: { result: responsGetDetailpost, likes: resGetLike[0].total_likes },
     });
   } catch (error) {
     next(error);
